@@ -3,9 +3,113 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Simple Digital Business Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f5f7fa;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      .dashboard-container {
+        max-width: 900px;
+        margin: auto;
+      }
+
+      .cards {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin: 20px 0;
+      }
+
+      .card {
+        flex: 1;
+        min-width: 180px;
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .section {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      button {
+        padding: 10px 16px;
+        border: none;
+        background-color: #2563eb;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background-color: #1d4ed8;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      #statusMessage {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello World</h1>
+    <div class="dashboard-container">
+      <h1 id="dashboardTitle">Dashboard</h1>
+      <p id="summaryText">Loading dashboard summary...</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3 id="totalProducts">Total Products</h3>
+        </div>
+
+        <div class="card">
+          <h3 id="totalOrders">Total Orders</h3>
+        </div>
+
+        <div class="card">
+          <h3 id="storeStatus">Store Status</h3>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 id="featuredTitle">Featured Product</h2>
+        <p id="featuredName">Product name here</p>
+        <p id="featuredPrice">Price here</p>
+      </div>
+
+      <div class="section">
+        <button id="refreshBtn">Refresh Dashboard</button>
+        <p id="statusMessage">No update yet.</p>
+      </div>
+
+      <div class="section">
+        <h2>Product List</h2>
+        <ul id="productList"></ul>
+      </div>
+
+      <div class="section">
+        <h2>API Product Panel</h2>
+        <p id="apiProductTitle">Loading product...</p>
+        <p id="apiProductPrice">Please wait...</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
